@@ -16,7 +16,7 @@
       <guid>https://josh.cx/posts/adcs/</guid>
       <description>what is esc1? esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by a CA.
 i was honestly pretty surprise how easy this was, and it&amp;rsquo;s something that a lot of people don&amp;rsquo;t seem to know about.
-after managing to successfully escalate my normal domain account to a full on domain admin, i decided to spin up a CA and take a further look.</description>
+after managing to successfully escalate my normal domain account to a full domain admin account at the company i work for, i decided to spin up a CA and take a further look.</description>
     </item>
     
     <item>
