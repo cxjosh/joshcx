@@ -33,8 +33,9 @@ jobs:
         run: |
           cp -R public/* ${GITHUB_WORKSPACE}/built-site/
           cd ${GITHUB_WORKSPACE}/built-site
+          touch .nojekyll
           git add .
           git config user.name 'cxjoshua'
           git config user.email 'socials@josh.cx'
           git commit -m 'Updated site'
-          git push          
+          git push
