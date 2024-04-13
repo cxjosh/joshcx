@@ -6,8 +6,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 10 Mar 2014 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 13 Apr 2024 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://josh.cx/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>esc1 - a concerningly easy privilege escalation</title>
+            <link>https://josh.cx/posts/adcs/</link>
+            <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://josh.cx/posts/adcs/</guid>
+            <description>what is ESC1? ESC1 is a specific vulnerability targeting poorly configured active directory certificate templates that are issued by a CA.</description>
+            <content type="html"><![CDATA[<h2 id="what-is-esc1">what is <code>ESC1?</code></h2>
+<p>ESC1 is a specific vulnerability targeting poorly configured active directory certificate templates that are issued by a CA.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Migrate to Hugo from Jekyll</title>
