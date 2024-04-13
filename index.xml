@@ -31,12 +31,12 @@
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://josh.cx/about/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>about</title>
+      <link>https://josh.cx/about/</link>
+      <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://josh.cx/about/about/</guid>
-      <description>Put Content Some Content About YourSelf On This Page</description>
+      <guid>https://josh.cx/about/</guid>
+      <description>[hello!] </description>
     </item>
     
   </channel>
