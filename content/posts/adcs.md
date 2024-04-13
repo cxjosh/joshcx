@@ -22,4 +22,4 @@ after managing to successfully escalate my normal domain account to a full domai
 
 there are a few things that we are looking for when exploiting ESC1, however the most damning are enrolment rights being granted to low privileged users and requesters being able to specify a subjectAltName in the CSR.
 
-![static](/images/meow.jpg)
+![static](images/meow.jpg)
