@@ -23,7 +23,7 @@ paginate     = 10
   enableGlobalLanguageMenu = true
 
   # Metadata mostly used in document's head
-  description = "a 22 year old schizo infrastructure engineer doing random sec stuff"
+  description = "a 22 year old mentally insane infrastructure engineer doing random security stuff"
   keywords = "homepage, blog"
   images = [""]
 
@@ -49,6 +49,18 @@ paginate     = 10
     #
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
+
+ [[params.social]]
+   name = "twitter"
+   url  = "https://twitter.com/cxjoshua"
+
+ [[params.social]]
+   name = "email"
+   url  = "mailto:admin@josh.cx"
+
+ [[params.social]]
+   name = "github"
+   url  = "https://github.com/cxjoshua"
 
   # And you can even create generic menu
   [[menu.main]]
