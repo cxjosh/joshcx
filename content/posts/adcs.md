@@ -12,4 +12,8 @@ aliases:
 
 ## what is `ESC1?`
 
-ESC1 is a specific vulnerability targeting poorly configured active directory certificate templates that are issued by a CA.
+esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by a CA.
+
+i was honestly pretty surprise how easy this was, and it's something that a lot of people don't seem to know about.
+
+after managing to successfully escalate my normal domain account to a full on domain admin, i decided to spin up a CA and take a further look.
