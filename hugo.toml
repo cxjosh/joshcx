@@ -52,7 +52,7 @@ paginate     = 10
 
  [[params.social]]
    name = "twitter"
-   url  = "https://twitter.com/cxjoshua"
+   url  = "https://twitter.com/cxjosh"
 
  [[params.social]]
    name = "email"
