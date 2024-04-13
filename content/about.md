@@ -9,14 +9,14 @@ type:
 ---
 
 ## who am  `i?`
-greetings earthlings 👽
+<p>greetings earthlings 👽</p>
 
-i am joshua. a 22 year old infrastructure engineer with a iron deficiency.
+<p>i am joshua. a 22 year old infrastructure engineer with a iron deficiency.</p>
 
-this blog is a place for me to post cool skid stuff that i do which includes exploits, research and in the wild assessments.
+<p>this blog is a place for me to post cool skid stuff that i do which includes exploits, research and in the wild assessments.</p>
 
-enquiries can be sent to admin@josh.cx
+<p>enquiries can be sent to admin@josh.cx</p>
 
-thanks for your time nerds
+<p>thanks for your time nerds</p>
 
-p.s i hate capital letters
+<p>p.s i hate capital letters</p>
