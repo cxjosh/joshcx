@@ -2,16 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://josh.cx/about/meow/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://josh.cx/posts/meow/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://josh.cx/posts/zazaza/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://josh.cx/about/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://josh.cx/series/hugo-101/</loc>
@@ -25,6 +19,8 @@
   </url><url>
     <loc>https://josh.cx/series/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://josh.cx/about/</loc>
   </url><url>
     <loc>https://josh.cx/blog/</loc>
   </url><url>
