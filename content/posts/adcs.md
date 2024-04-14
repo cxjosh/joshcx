@@ -1,6 +1,6 @@
 ---
 date: 2024-04-13
-title: esc1 - a concerningly easy privilege escalation
+title: esc1 - a surprisingly easy privilege escalation
 type:
 - post
 - posts

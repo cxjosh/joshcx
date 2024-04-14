@@ -11,7 +11,7 @@ paginate     = 10
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "a 22 year old schizo infrastructure engineer doing random sec stuff"
+  homeSubtitle = "a 22 year old infrastructure engineer doing random security stuff"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -23,7 +23,7 @@ paginate     = 10
   enableGlobalLanguageMenu = false
 
   # Metadata mostly used in document's head
-  description = "a 22 year old mentally insane infrastructure engineer doing random security stuff"
+  description = "a 22 year old infrastructure engineer doing random security stuff"
   keywords = "homepage, blog"
   images = [""]
 
