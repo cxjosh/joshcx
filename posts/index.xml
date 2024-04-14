@@ -34,6 +34,7 @@ i was pretty surprised how easy this was and even more so by the fact that i hav
 <p>in the above image the ability to include a subjectAltName in the CSR to that specific template is allowed.</p>
 <p>active directory will prioritise the SAN name in a certificate for identity if the field is present. this means that by specifying a specific username in the SAN a .pfx can be requested to impersonate any user (e.g domain administrators)</p>
 <p>when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.</p>
+<p>ฅ^•ﻌ•^ฅ</p>
 <h3 id="proof-of-concept">proof of concept</h3>
 <p>the tool that i used for absolutely everything was certipy which can be downloaded from the below link:</p>
 <p><a href="https://github.com/ly4k/Certipy">https://github.com/ly4k/Certipy</a></p>
