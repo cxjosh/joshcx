@@ -11,9 +11,9 @@ type:
 ## who am  `i?`
 greetings earthlings 👽
 
-i am joshua, a 22 year old infrastructure engineer with a iron deficiency.
+i am joshua, a 22 year old infrastructure engineer with an iron deficiency.
 
-this blog is a place for me to post cool skid stuff that i do which includes exploits, research and in the wild assessments.
+this blog is a place for me to post cool security stuff that i do which includes exploits, research and in the wild assessments.
 
 enquiries can be sent to admin@josh.cx
 

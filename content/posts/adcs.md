@@ -18,8 +18,10 @@ i was honestly pretty surprise how easy this was, and it's something that a lot 
 
 after managing to successfully escalate my normal domain account to full domain admin at the company i work for, i decided to spin up a CA and take a further look.
 
-## what makes a template misconfigured?
+## what makes a template vulnerable?
 
 there are a few things that we are looking for when exploiting ESC1, however the most damning are enrolment rights being granted to low privileged users and requesters being able to specify a subjectAltName in the CSR.
 
-![example](/meow.jpg)
+![subjectAltName](/sanRequest)
+
+as you can see in the above image, the x
