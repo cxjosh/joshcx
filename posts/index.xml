@@ -24,7 +24,7 @@ after managing to successfully escalate my normal domain account to full domain 
 <p>after managing to successfully escalate my normal domain account to full domain admin at the company i work for, i decided to spin up a CA and take a further look.</p>
 <h2 id="what-makes-a-template-vulnerable">what makes a template vulnerable?</h2>
 <p>there are a few things that we are looking for when exploiting ESC1, however the most damning are enrolment rights being granted to low privileged users and requesters being able to specify a subjectAltName in the CSR.</p>
-<p><img src="/sanRequest" alt="subjectAltName"></p>
+<p><img src="/sanRequest.png" alt="subjectAltName"></p>
 <p>as you can see in the above image, the x</p>
 ]]></content>
         </item>
