@@ -24,7 +24,8 @@ i was pretty surprised how easy this was and even more so by the fact that i hav
 
 the first thing i tried after coming across it was to replicate this vulnerability at my current workplace's environment. after approximately an hour using only a domain user account, i had successfully manage to impersonate the head of the soc team to create a new domain user account and it to the domain admins group using LDAP queries.
 
-after managing to successfully escalate my normal domain account privileges to full domain admin at the company i work for, i decided to spin up a CA and take a further look.
+![joshPwnedYou](/joshPwnedYou.png)
+
 
 ## what makes a template vulnerable?
 
@@ -40,15 +41,10 @@ active directory will prioritise the SAN name in a certificate for identity if t
 
 when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.
 
-$ this is a command
->another command test
+### proof of concept
 
-{
+the tool that i used for absolutely everything was certipy which can be downloaded from the below link:
 
-  syntax tes
+https://github.com/ly4k/Certipy
 
-}
-
-      Test
-      generate_github_pages_in_a_submodule
-      more test
+credit to ly4k for maintaining such a fantastic tool.
