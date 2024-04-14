@@ -38,6 +38,13 @@ i was pretty surprised how easy this was and even more so by the fact that i hav
 <blockquote>
 <p>another command test</p>
 </blockquote>
+<p>{</p>
+<p>syntax tes</p>
+<p>}</p>
+<pre><code>  Test
+  generate_github_pages_in_a_submodule
+  more test
+</code></pre>
 ]]></content>
         </item>
         
