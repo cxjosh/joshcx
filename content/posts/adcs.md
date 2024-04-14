@@ -22,7 +22,7 @@ esc1 is a specific vulnerability targeting overly permissive active directory ce
 
 i was pretty surprised how easy this was and even more so by the fact that i haven't come across it before.
 
-the first thing i tried after coming across it was to replicate this vulnerability at my current workplace's environment. after approximately an hour using only a domain user account, i had successfully manage to impersonate the head of the soc team to create a new domain user account and it to the domain admins group using LDAP queries.
+the first thing i tried after coming across it was to replicate this vulnerability at my current workplace's environment. after approximately an hour using only a domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.
 
 ![joshPwnedYou](/joshPwnedYou.png)
 
@@ -40,6 +40,7 @@ in the above image the ability to include a subjectAltName in the CSR to that sp
 active directory will prioritise the SAN name in a certificate for identity if the field is present. this means that by specifying a specific username in the SAN a .pfx can be requested to impersonate any user (e.g domain administrators)
 
 when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.
+
 
 ### proof of concept
 
