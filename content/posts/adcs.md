@@ -41,6 +41,7 @@ active directory will prioritise the SAN name in a certificate for identity if t
 
 when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.
 
+ฅ^•ﻌ•^ฅ
 
 ### proof of concept
 
