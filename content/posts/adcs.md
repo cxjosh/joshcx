@@ -23,7 +23,10 @@ after managing to successfully escalate my normal domain account privileges to f
 there are a few things that we are looking for when exploiting ESC1, however the most damning are enrolment rights being granted to low privileged users and requesters being able to specify a subjectAltName in the CSR.
 
 **example 1:**
-
 ![subjectAltName](/sanRequest.png)
 
-as you can see in the above image, the x
+in the above image the ability to include a subjectAltName in the CSR to that specific template is allowed.
+
+active directory will prioritise the SAN name in a certificate for identity if the field is present. this means that by specifying a specific username in the SAN a .pfx can be requested to impersonate any user (e.g domain administrators)
+
+when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.
