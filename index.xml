@@ -17,7 +17,7 @@
       <description>what is adcs? adcs - active directory certificate services is a windows server role that issues and manages PKI certificates that are used in authentication and communication protocols.
 these certificates are issued through root and subordinate CA&amp;rsquo;s to various different users, computers and services to maintain certificate validity.
 what is esc1? esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by these CA&amp;rsquo;s.
-i was pretty surprised how easy this was and even more so by the fact that i haven&amp;rsquo;t come across it before.</description>
+more specifically, if a template allows a standard domain user or domain computer to enroll/request a template, depending on how the template is configured they have the potential to impersonate any user on the domain.</description>
     </item>
     
     <item>
