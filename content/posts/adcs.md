@@ -20,9 +20,11 @@ these certificates are issued through root and subordinate CA's to various diffe
 
 esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by these CA's.
 
+more specifically, if a template allows a standard domain user or domain computer to enroll/request a template, depending on how the template is configured they have the potential to impersonate any user on the domain.
+
 i was pretty surprised how easy this was and even more so by the fact that i haven't come across it before.
 
-the first thing i tried after coming across it was to replicate this vulnerability at my current workplace's environment. after approximately an hour using only a domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.
+the first thing i tried after coming across it was to attempt to replicate this vulnerability at my current workplace's AD environment. after approximately an hour using only a standard domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.
 
 ![joshPwnedYou](/joshPwnedYou.png)
 
@@ -50,3 +52,5 @@ the tool that i used for absolutely everything was certipy which can be download
 https://github.com/ly4k/Certipy
 
 credit to ly4k for maintaining such a fantastic tool.
+
+for the purpose of this blog i have spun up 2 VM's, one of which mimics an AD & CA server, and the other being a standard on domain laptop.
