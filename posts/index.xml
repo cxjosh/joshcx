@@ -26,7 +26,7 @@ i was pretty surprised how easy this was and even more so by the fact that i hav
 <p>esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by these CA&rsquo;s.</p>
 <p>i was pretty surprised how easy this was and even more so by the fact that i haven&rsquo;t come across it before.</p>
 <p>the first thing i tried after coming across it was to replicate this vulnerability at my current workplace&rsquo;s environment. after approximately an hour using only a domain user account, i had successfully manage to impersonate the head of the soc team to create a new domain user account and it to the domain admins group using LDAP queries.</p>
-<p>after managing to successfully escalate my normal domain account privileges to full domain admin at the company i work for, i decided to spin up a CA and take a further look.</p>
+<p><img src="/joshPwnedYou.png" alt="joshPwnedYou"></p>
 <h2 id="what-makes-a-template-vulnerable">what makes a template vulnerable?</h2>
 <p>there are a few things that we are looking for when exploiting ESC1, however the most damning are enrolment rights being granted to low privileged users and requesters being able to specify a subjectAltName in the CSR.</p>
 <p><strong>example 1:</strong></p>
@@ -34,17 +34,10 @@ i was pretty surprised how easy this was and even more so by the fact that i hav
 <p>in the above image the ability to include a subjectAltName in the CSR to that specific template is allowed.</p>
 <p>active directory will prioritise the SAN name in a certificate for identity if the field is present. this means that by specifying a specific username in the SAN a .pfx can be requested to impersonate any user (e.g domain administrators)</p>
 <p>when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.</p>
-<p>$ this is a command</p>
-<blockquote>
-<p>another command test</p>
-</blockquote>
-<p>{</p>
-<p>syntax tes</p>
-<p>}</p>
-<pre><code>  Test
-  generate_github_pages_in_a_submodule
-  more test
-</code></pre>
+<h3 id="proof-of-concept">proof of concept</h3>
+<p>the tool that i used for absolutely everything was certipy which can be downloaded from the below link:</p>
+<p><a href="https://github.com/ly4k/Certipy">https://github.com/ly4k/Certipy</a></p>
+<p>credit to ly4k for maintaining such a fantastic tool.</p>
 ]]></content>
         </item>
         
