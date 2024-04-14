@@ -42,3 +42,13 @@ when creating a new template it does give a warning mentioning the risks upon al
 
 $ this is a command
 >another command test
+
+{
+
+  syntax tes
+
+}
+
+      Test
+      generate_github_pages_in_a_submodule
+      more test
