@@ -82,3 +82,9 @@ we can now use this to open up an administrative LDAP shell using the below payl
 > python3 auth -pfx domain_admin.pfx -dc-ip 192.168.197.129 -ldap-shell -debug
 
 ![pwnd](/pwnd.png)
+
+## finishing notes
+
+long story short when configuring ADCS templates always ensure that the SAN cannot be supplied in the request and should always be taken from AD values.
+
+👽
