@@ -12,7 +12,7 @@ aliases:
 
 ## what is adcs?
 
-adcs - active directory certificate services is a windows server role that issues and manages PKI certificates that are used in authentication and communication protocols.
+adcs, otherwise known as active directory certificate services is a windows server role that issues and manages PKI certificates that are used in authentication and communication protocols.
 
 these certificates are issued through root and subordinate CA's to various different users, computers and services to maintain certificate validity.
 
@@ -22,9 +22,9 @@ esc1 is a specific vulnerability targeting overly permissive active directory ce
 
 more specifically, if a template allows a standard domain user or domain computer to enroll/request a template, depending on how the template is configured they have the potential to impersonate any user on the domain.
 
-i was pretty surprised how easy this was and even more so by the fact that i haven't come across it before.
+i was pretty surprised how easy this was to replicate and even more so by the fact that i haven't come across it before.
 
-the first thing i tried after coming across it was to attempt to replicate this vulnerability at my current workplace's AD environment. after approximately an hour using only a standard domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.
+the first thing i tried after coming across said vulnerability was to replicate the privilege escalation under my workplace's environment. after approximately an hour using only a standard domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.
 
 ![joshPwnedYou](/joshPwnedYou.png)
 
@@ -43,6 +43,8 @@ active directory will prioritise the SAN name in a certificate for identity if t
 
 when creating a new template it does give a warning mentioning the risks upon allowing anybody to request a SAN, however if cloning an existing template with it enabled it does not grant a warning.
 
+![Prevent](/prevent.png)
+
 ฅ^•ﻌ•^ฅ
 
 ### proof of concept
@@ -53,7 +55,7 @@ https://github.com/ly4k/Certipy
 
 credit to ly4k for maintaining such a fantastic tool.
 
-for the purpose of this blog i have spun up 2 VM's, one of which mimics an AD & CA server (CXLABS-DC-01), and the other being a standard on domain laptop (CXLABS-VM).
+for the purpose of this blog i have spun up a VM which mimics an AD & CA server (CXLABS-DC-01)
 
 i've created a template under the name of VulnTemplate which allows for both the requestee to specify the SAN, in addition to normal domain users being able to enroll into this template.
 
@@ -67,11 +69,11 @@ i've created a template under the name of VulnTemplate which allows for both the
 
  ![VulnTemplate](/VulnTemplate.png)
 
- so straight away you can see we've found a template vulnerable, next we can leverage this template and request a certificate with the SAN being "domain_admin" with the payload looking a little something like this:
+ straight away you can see we've found a template vulnerable to ESC1, next we can leverage this and request a certificate with the SAN being "domain_admin" with the payload looking a little something like this:
 
  > python3 entry.py req -u joshua@cxlabs.local -p REDACTED -target 192.168.197.129 -template VulnTemplate -ca "CXLABS-CXLABS-DC-01-CA" -upn "domain_admin@cxlabs.local"
 
-![POC](/POC.png)
+![POC](/poc.png)
 
 as you can see we have successfully managed to receive a .PFX certificate that allows us to impersonate a domain admin.
 
