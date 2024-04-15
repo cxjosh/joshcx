@@ -44,7 +44,7 @@ these certificates are issued through root and subordinate CA&rsquo;s to various
 what is esc1? esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by these CA&rsquo;s.
 more specifically, if a template allows a standard domain user or domain computer to enroll/request a template, depending on how the template is configured they have the potential to impersonate any user on the domain."><meta itemprop="datePublished" content="2024-04-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-04-13T00:00:00+00:00" />
-<meta itemprop="wordCount" content="502"><meta itemprop="image" content="https://josh.cx/"/>
+<meta itemprop="wordCount" content="498"><meta itemprop="image" content="https://josh.cx/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://josh.cx/"/>
@@ -184,7 +184,7 @@ more specifically, if a template allows a standard domain user or domain compute
 <p>python3 entry.py find -u &ldquo;<a href="mailto:joshua@CXLABS.LOCAL">joshua@CXLABS.LOCAL</a>&rdquo; -p &ldquo;REDACTED&rdquo; -dc-ip &ldquo;192.168.197.129&rdquo; -stdout -scheme ldap</p>
 </blockquote>
 <p>using the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.</p>
-<p>it&rsquo;s important to note that certipy uses LDAPS by default, so if spinning up a quick lab and not wanting to issue a cert for LDAPS, you can use &ldquo;-scheme ldap&rdquo; to explicitly use port 386.</p>
+<p>it&rsquo;s important to note that certipy uses LDAPS by default, in my messy DC deployment i have not issued any certs for LDAPS authentication, so i&rsquo;ve opted to use plain old ldap.</p>
 <p>output from command:</p>
 <p><img src="/VulnTemplate.png" alt="VulnTemplate"></p>
 
@@ -205,7 +205,7 @@ more specifically, if a template allows a standard domain user or domain compute
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        502 Words
+        498 Words
       </p>
 
       <p>

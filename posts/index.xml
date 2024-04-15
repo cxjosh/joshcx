@@ -46,7 +46,7 @@ more specifically, if a template allows a standard domain user or domain compute
 <p>python3 entry.py find -u &ldquo;<a href="mailto:joshua@CXLABS.LOCAL">joshua@CXLABS.LOCAL</a>&rdquo; -p &ldquo;REDACTED&rdquo; -dc-ip &ldquo;192.168.197.129&rdquo; -stdout -scheme ldap</p>
 </blockquote>
 <p>using the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.</p>
-<p>it&rsquo;s important to note that certipy uses LDAPS by default, so if spinning up a quick lab and not wanting to issue a cert for LDAPS, you can use &ldquo;-scheme ldap&rdquo; to explicitly use port 386.</p>
+<p>it&rsquo;s important to note that certipy uses LDAPS by default, in my messy DC deployment i have not issued any certs for LDAPS authentication, so i&rsquo;ve opted to use plain old ldap.</p>
 <p>output from command:</p>
 <p><img src="/VulnTemplate.png" alt="VulnTemplate"></p>
 ]]></content>
