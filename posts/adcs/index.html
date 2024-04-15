@@ -160,7 +160,6 @@ what is esc1? esc1 is a specific vulnerability targeting overly permissive activ
 <p>more specifically, if a template allows a standard domain user or domain computer to enroll/request a template, depending on how the template is configured they have the potential to impersonate any user on the domain.</p>
 <p>i was pretty surprised how easy this was to replicate, and was also pretty surprised that i hadn&rsquo;t heard of this exploit before.</p>
 <p>the first thing i tried after coming across said vulnerability was to replicate the privilege escalation under my workplace&rsquo;s environment. after approximately an hour using only a standard domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.</p>
-<p><img src="/joshPwnedYou.png" alt="joshPwnedYou"></p>
 <h2 id="what-makes-a-template-vulnerable">what makes a template vulnerable?</h2>
 <p>there are a few things that we are looking for when exploiting ESC1, however the most damning are enrolment rights being granted to low privileged users and requesters being able to specify a subjectAltName in the CSR.</p>
 <p><strong>example 1:</strong></p>
