@@ -26,8 +26,6 @@ i was pretty surprised how easy this was to replicate, and was also pretty surpr
 
 the first thing i tried after coming across said vulnerability was to replicate the privilege escalation under my workplace's environment. after approximately an hour using only a standard domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.
 
-![joshPwnedYou](/joshPwnedYou.png)
-
 
 ## what makes a template vulnerable?
 
