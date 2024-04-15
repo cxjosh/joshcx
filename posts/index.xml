@@ -40,7 +40,15 @@ more specifically, if a template allows a standard domain user or domain compute
 <p>the tool that i used for absolutely everything was certipy which can be downloaded from the below link:</p>
 <p><a href="https://github.com/ly4k/Certipy">https://github.com/ly4k/Certipy</a></p>
 <p>credit to ly4k for maintaining such a fantastic tool.</p>
-<p>for the purpose of this blog i have spun up 2 VM&rsquo;s, one of which mimics an AD &amp; CA server, and the other being a standard on domain laptop.</p>
+<p>for the purpose of this blog i have spun up 2 VM&rsquo;s, one of which mimics an AD &amp; CA server (CXLABS-DC-01), and the other being a standard on domain laptop (CXLABS-VM).</p>
+<p>i&rsquo;ve created a template under the name of VulnTemplate which allows for both the requestee to specify the SAN, in addition to normal domain users being able to enroll into this template.</p>
+<blockquote>
+<p>python3 entry.py find -u &ldquo;<a href="mailto:joshua@CXLABS.LOCAL">joshua@CXLABS.LOCAL</a>&rdquo; -p &ldquo;REDACTED&rdquo; -dc-ip &ldquo;192.168.197.129&rdquo; -stdout -scheme ldap</p>
+</blockquote>
+<p>using the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.</p>
+<p>it&rsquo;s important to note that certipy uses LDAPS by default, so if spinning up a quick lab and not wanting to issue a cert for LDAPS, you can use &ldquo;-scheme ldap&rdquo; to explicitly use port 386.</p>
+<p>output from command:</p>
+<p><img src="/VulnTemplate.png" alt="VulnTemplate"></p>
 ]]></content>
         </item>
         
