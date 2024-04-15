@@ -53,4 +53,16 @@ https://github.com/ly4k/Certipy
 
 credit to ly4k for maintaining such a fantastic tool.
 
-for the purpose of this blog i have spun up 2 VM's, one of which mimics an AD & CA server, and the other being a standard on domain laptop.
+for the purpose of this blog i have spun up 2 VM's, one of which mimics an AD & CA server (CXLABS-DC-01), and the other being a standard on domain laptop (CXLABS-VM).
+
+i've created a template under the name of VulnTemplate which allows for both the requestee to specify the SAN, in addition to normal domain users being able to enroll into this template.
+
+ > python3 entry.py find -u "joshua@CXLABS.LOCAL" -p "REDACTED" -dc-ip "192.168.197.129" -stdout -scheme ldap
+
+ using the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.
+
+ it's important to note that certipy uses LDAPS by default, so if spinning up a quick lab and not wanting to issue a cert for LDAPS, you can use "-scheme ldap" to explicitly use port 386.
+
+ output from command:
+
+ ![VulnTemplate](/VulnTemplate.png)
