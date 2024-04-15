@@ -60,6 +60,9 @@ what is esc1? esc1 is a specific vulnerability targeting overly permissive activ
 <p>python3 auth -pfx domain_admin.pfx -dc-ip 192.168.197.129 -ldap-shell -debug</p>
 </blockquote>
 <p><img src="/pwnd.png" alt="pwnd"></p>
+<h2 id="finishing-notes">finishing notes</h2>
+<p>long story short when configuring ADCS templates always ensure that the SAN cannot be supplied in the request and should always be taken from AD values.</p>
+<p>👽</p>
 ]]></content>
         </item>
         
