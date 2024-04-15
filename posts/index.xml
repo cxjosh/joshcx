@@ -24,7 +24,7 @@ what is esc1? esc1 is a specific vulnerability targeting overly permissive activ
 <h2 id="what-is-esc1">what is esc1?</h2>
 <p>esc1 is a specific vulnerability targeting overly permissive active directory certificate templates that are issued by these CA&rsquo;s.</p>
 <p>more specifically, if a template allows a standard domain user or domain computer to enroll/request a template, depending on how the template is configured they have the potential to impersonate any user on the domain.</p>
-<p>i was pretty surprised how easy this was to replicate and even more so by the fact that i haven&rsquo;t come across it before.</p>
+<p>i was pretty surprised how easy this was to replicate, and was also pretty surprised that i hadn&rsquo;t heard of this exploit before.</p>
 <p>the first thing i tried after coming across said vulnerability was to replicate the privilege escalation under my workplace&rsquo;s environment. after approximately an hour using only a standard domain user account, i had successfully manage to impersonate the head of the SOC team to create a new domain user account and add it to the domain admins group using LDAP queries.</p>
 <p><img src="/joshPwnedYou.png" alt="joshPwnedYou"></p>
 <h2 id="what-makes-a-template-vulnerable">what makes a template vulnerable?</h2>
@@ -41,7 +41,7 @@ what is esc1? esc1 is a specific vulnerability targeting overly permissive activ
 <p><a href="https://github.com/ly4k/Certipy">https://github.com/ly4k/Certipy</a></p>
 <p>credit to ly4k for maintaining such a fantastic tool.</p>
 <p>for the purpose of this blog i have spun up a VM which mimics an AD &amp; CA server (CXLABS-DC-01)</p>
-<p>i&rsquo;ve created a template under the name of VulnTemplate which allows for both the requestee to specify the SAN, in addition to normal domain users being able to enroll into this template.</p>
+<p>i created a template under the name of VulnTemplate which allows the requestee to specify the SAN and also allows normal domain users to enroll into this template.</p>
 <blockquote>
 <p>python3 entry.py find -u &ldquo;<a href="mailto:joshua@CXLABS.LOCAL">joshua@CXLABS.LOCAL</a>&rdquo; -p &ldquo;REDACTED&rdquo; -dc-ip &ldquo;192.168.197.129&rdquo; -stdout -scheme ldap</p>
 </blockquote>
@@ -49,17 +49,18 @@ what is esc1? esc1 is a specific vulnerability targeting overly permissive activ
 <p>it&rsquo;s important to note that certipy uses LDAPS by default, in my messy DC deployment i have not issued any certs for LDAPS authentication, so i&rsquo;ve opted to use plain old ldap.</p>
 <p>output from command:</p>
 <p><img src="/VulnTemplate.png" alt="VulnTemplate"></p>
-<p>straight away you can see we&rsquo;ve found a template vulnerable to ESC1, next we can leverage this and request a certificate with the SAN being &ldquo;domain_admin&rdquo; with the payload looking a little something like this:</p>
+<p>straight away you can see we&rsquo;ve found a template vulnerable to ESC1, next we can leverage this and request a certificate with the SAN being &ldquo;domain_admin&rdquo; (a domain admin user i setup) with the payload looking a little something like this:</p>
 <blockquote>
 <p>python3 entry.py req -u <a href="mailto:joshua@cxlabs.local">joshua@cxlabs.local</a> -p REDACTED -target 192.168.197.129 -template VulnTemplate -ca &ldquo;CXLABS-CXLABS-DC-01-CA&rdquo; -upn &ldquo;<a href="mailto:domain_admin@cxlabs.local">domain_admin@cxlabs.local</a>&rdquo;</p>
 </blockquote>
 <p><img src="/poc.png" alt="poc"></p>
 <p>as you can see we have successfully managed to receive a .PFX certificate that allows us to impersonate a domain admin.</p>
-<p>we can now use this to open up an administrative LDAP shell using the below payload:</p>
+<p>we can now use this to open up an administrative LDAP certipy shell using the below payload:</p>
 <blockquote>
 <p>python3 auth -pfx domain_admin.pfx -dc-ip 192.168.197.129 -ldap-shell -debug</p>
 </blockquote>
 <p><img src="/pwnd.png" alt="pwnd"></p>
+<p>and just like that we have obtained domain admin.</p>
 <h2 id="finishing-notes">finishing notes</h2>
 <p>long story short when configuring ADCS templates always ensure that the SAN cannot be supplied in the request and should always be taken from AD values.</p>
 <p>👽</p>
