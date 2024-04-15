@@ -61,8 +61,8 @@ i've created a template under the name of VulnTemplate which allows for both the
 
  using the find module of certipy to enumerate all ADCS templates, where -u and -p are the credentials for the domain account and the DC-IP is the CA.
 
- it's important to note that certipy uses LDAPS by default, so if spinning up a quick lab and not wanting to issue a cert for LDAPS, you can use "-scheme ldap" to explicitly use port 386.
-
+ it's important to note that certipy uses LDAPS by default, in my messy DC deployment i have not issued any certs for LDAPS authentication, so i've opted to use plain old ldap.
+ 
  output from command:
 
  ![VulnTemplate](/VulnTemplate.png)
